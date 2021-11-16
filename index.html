@@ -40,7 +40,7 @@
                         <h4>Nome Utente</h4>
                 </div>
                 <div class="icon">
-                    <i class="fas fa-redo"></i>
+                    <i class="fas fa-circle-notch"></i>
                     <i class="fas fa-comment-alt"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
@@ -68,17 +68,11 @@
             <!-- Chat List -->
             <div class="chat-list">
                 <ul>
-                    <li class="user px-15">
-                        <img src="./img/avatar_1.jpg" alt="">
+                    <li class="user px-15" v-for="contact in contacts">
+                        <img :src=" './img/avatar' + contact.avatar + '.jpg'" alt="">
                         <div class="info px-5">
-                        <h4>Michele</h4>
+                        <h4>{{contact.name}}</h4>
                     </li>
-                    <li class="user px-15">
-                        <img src="./img/avatar_1.jpg" alt="">
-                        <div class="info px-5">
-                        <h4>Michele</h4>
-                    </li>
-                    
                 </ul>
             </div>
         </section>
