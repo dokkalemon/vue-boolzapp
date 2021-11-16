@@ -92,7 +92,6 @@ i {
     display: flex;
     justify-content: start;
     align-items: center;
-    border: 1px solid #dbdbdb;
 }
 
 .header img {
@@ -176,7 +175,14 @@ i {
     border: none;
     outline: none;
     border-radius: 5px;
+    font-size: 12px;
 }
+
+.search input::placeholder {
+    color: #ababab
+}
+
+
 
 /* Chat List */
 .chat-list {
@@ -214,5 +220,60 @@ i {
 /* ---------CHATS--------- */
 .chat {
     height: 100%;
-    width: 65%
+    width: 65%;
+    border: 1px solid #dbdbdb;
+}
+
+/* Conversation Section */
+.conversation {
+    height: calc(100% - 70px - 70px);
+    width: 100%;
+    background-image: url('../img/mine.jpg');
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.conv-item {
+    width: 100%;
+    padding: 0px 100px 40px 100px;
+    display: flex;
+    justify-content: end;
+}
+
+.text-container {
+    background-color: #ddfabf;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.text-container span {
+    font-size: 10px;
+    position: absolute; 
+    right: 5px;
+    bottom: 5px;
+    color: #a0a1a2;
+}
+
+.get {
+    justify-content: start;
+}
+
+.get .text-container {
+    background-color: #fff;
+}
+
+
+
+
+
+
+/* Message */
+.message {
+    height: 70px;
+    width: 100%;
+    background-color: #f4f0ed
 }
