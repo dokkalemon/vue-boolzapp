@@ -10,3 +10,26 @@
 body {
     font-family: 'Lato', sans-serif;
 }
+
+.debug {
+    border: 1px solid red;
+}
+/* App Back */
+.app-back {
+    height: 100vh;
+    width: 100%;
+}
+
+.green {
+    height: 140px;
+    width: 100%;
+    background-color: #32a093;
+}
+
+.grey {
+    height: calc(100% - 140px);
+    width: 100%;
+    background-color: #dce0dc;;
+}
+
+
