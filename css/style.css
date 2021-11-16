@@ -178,11 +178,33 @@ i {
     border-radius: 5px;
 }
 
+/* Chat List */
+.chat-list {
+    height: calc( 100% - 50px - 80px - 70px);
+    width: 100%;
+    background-color: #ffffff;
+    overflow: auto;
+}
 
+.chat-list ul {
+    height: 100%;
+    width: 100%;
+}
 
+.chat-list ul li {
+    list-style: none;
+    height: 80px;
+    width: 100%;
+    border: 1px solid #f6f6f6;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
 
-
-
+.user img {
+    height: 85%;
+    border-radius: 100%;
+}
 
 
 
