@@ -27,6 +27,8 @@ body {
 
 i {
     font-size: 22px;
+    color: #a3a3a4;
+    cursor: pointer;
 }
 
 .info {
@@ -108,9 +110,7 @@ i {
 }
 
 .icon i {
-    color: #a5a5a5;
     margin-left: 20px;
-    cursor: pointer;
 }
 
 /* -----------USER SECTION----------- */
@@ -163,7 +163,6 @@ i {
     align-items: center;
 }
 .search i {
-    color: #c2c5c7;
     margin: 0 30px;
     font-size: 19px;
 }
@@ -244,7 +243,7 @@ i {
 
 .text-container {
     background-color: #ddfabf;
-    width: 30%;
+    width: 45%;
     padding: 20px;
     border-radius: 10px;
     position: relative;
@@ -268,12 +267,25 @@ i {
 
 
 
-
-
-
 /* Message */
 .message {
     height: 70px;
     width: 100%;
-    background-color: #f4f0ed
+    background-color: #f4f0ed;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.message i {
+    padding: 0 30px;
+}
+
+.message input {
+    flex-grow: 1;
+    border: none;
+    height: 70%;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
 }
