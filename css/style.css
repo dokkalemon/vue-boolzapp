@@ -33,3 +33,109 @@ body {
 }
 
 
+/* App */
+.app {
+    height: 95vh;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+}
+
+.px-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.px-5 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* ---------USERS--------- */
+/* Header Users */
+.users {
+    height: 100%;
+    width: 35%;
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    background-color: #ededed;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+}
+
+.header img {
+    height: 85%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex-grow: 1;
+    cursor: pointer;
+}
+.info h4 {
+    font-weight: 500
+}
+.info span {
+    font-size: 14px;
+    color: #82888b;
+}
+
+.icon {
+    display: flex; 
+    width: 20%;
+    justify-content: end;
+}
+
+.icon i {
+    color: #a5a5a5;
+    margin-left: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------CHATS--------- */
+.chat {
+    height: 100%;
+    width: 65%
+}
