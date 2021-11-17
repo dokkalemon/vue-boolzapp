@@ -132,6 +132,7 @@ const app = new Vue({
         activeChat: 0,
         messageInput: '',
 
+        //Messaggi Random
         userMessage: [
             {
                 text: 'certo grazie'
@@ -155,18 +156,16 @@ const app = new Vue({
                 text: 'Buonanotte'
             },
         ]
-
-
-
-
     },
     methods: {
+
+        //selezione della Chat
         selectChat(index) {
             this.activeChat = index;   
         },
 
        
-
+        // aggiungiamo un messaggio nella chat
         addMessage() {
             if (this.messageInput !== '') {
                 this.contacts[this.activeChat].messages.push({
@@ -182,6 +181,7 @@ const app = new Vue({
             //input focus
             this.$refs.input.focus();
 
+            //risposta dell'user dopo 1 secondo
             setTimeout(() => {
                 this.contacts[this.activeChat].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -191,6 +191,7 @@ const app = new Vue({
             }, 1000)
         },
 
+        //generiamo un numero random
         numRandom() {
             return Math.floor( Math.random() * this.userMessage.length)
         }
