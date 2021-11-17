@@ -38,6 +38,11 @@ l’utente riceverà un “ok” come risposta, che apparirà dopo
 /* Vue */
 const app = new Vue({
     el: '#app',
+    created() {
+        //traduzione data
+        dayjs.locale('it')
+    },
+
     data: {
         contacts: [
             {
@@ -132,10 +137,12 @@ const app = new Vue({
             this.activeChat = index;   
         },
 
+       
+
         addMessage() {
             if (this.messageInput !== '') {
                 this.contacts[this.activeChat].messages.push({
-                    date: 'adesso',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: this.messageInput,
                     status: 'sent'
                 })
@@ -145,7 +152,15 @@ const app = new Vue({
             this.messageInput = '';
 
             //input focus
-            this.$refs.input.focus()
-        }
+            this.$refs.input.focus();
+
+            setTimeout(() => {
+                this.contacts[this.activeChat].messages.push({
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    text: 'ok',
+                    status: 'received',
+                });
+            }, 1000)
+            }
     }
 }) 

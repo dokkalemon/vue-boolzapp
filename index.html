@@ -86,9 +86,9 @@
 
             <!-- Header -->
             <div class="header user px-15">
-                <img src="./img/avatar_1.jpg" alt="">
+                <img :src=" './img/avatar' + contacts[activeChat].avatar + '.jpg'" alt="">
                 <div class="info px-5">
-                        <h4>Michele</h4>
+                        <h4>{{contacts[activeChat].name}}</h4>
                         <span>Ultimo Accesso oggi alle 10:45</span>
                 </div>
                 <div class="icon">
@@ -125,12 +125,7 @@
         </section>
 
 
-
-
-
-
-
-
+ 
 
 
 
@@ -140,6 +135,8 @@
 
 
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/locale/it.js"></script>
     <script src="./js/main.js"></script>
 
 </body>
