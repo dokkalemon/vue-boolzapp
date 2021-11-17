@@ -125,11 +125,27 @@ const app = new Vue({
         ],
 
         activeChat: 0,
-        
+        messageInput: '',
     },
     methods: {
         selectChat(index) {
             this.activeChat = index;   
+        },
+
+        addMessage() {
+            if (this.messageInput !== '') {
+                this.contacts[this.activeChat].messages.push({
+                    date: 'adesso',
+                    text: this.messageInput,
+                    status: 'sent'
+                })
+            };
+
+            //clean input
+            this.messageInput = '';
+
+            //input focus
+            this.$refs.input.focus()
         }
     }
 }) 
