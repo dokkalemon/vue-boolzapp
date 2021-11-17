@@ -71,7 +71,7 @@
             <!-- Chat List -->
             <div class="chat-list">
                 <ul>
-                    <li class="user px-15" v-for="contact in contacts">
+                    <li class="user px-15" v-for="(contact, index) in contacts" @click="selectChat(index)">
                         <img :src=" './img/avatar' + contact.avatar + '.jpg'" alt="">
                         <div class="info px-5">
                         <h4>{{contact.name}}</h4>
