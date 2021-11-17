@@ -131,6 +131,34 @@ const app = new Vue({
 
         activeChat: 0,
         messageInput: '',
+
+        userMessage: [
+            {
+                text: 'certo grazie'
+            },
+            {
+                text: 'va bene'
+            },
+            {
+                text: 'Grazie infinite'
+            },
+            {
+                text: 'A Domani'
+            },
+            {
+                text: 'No domani ho la lezione di Boolean'
+            },
+            {
+                text: 'Addio'
+            },
+            {
+                text: 'Buonanotte'
+            },
+        ]
+
+
+
+
     },
     methods: {
         selectChat(index) {
@@ -157,10 +185,14 @@ const app = new Vue({
             setTimeout(() => {
                 this.contacts[this.activeChat].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    text: 'ok',
+                    text: this.userMessage[this.numRandom()].text,
                     status: 'received',
                 });
             }, 1000)
-            }
+        },
+
+        numRandom() {
+            return Math.floor( Math.random() * this.userMessage.length)
+        }
     }
 }) 
