@@ -100,19 +100,19 @@
 
             <!-- Conversation Section -->
             <div class="conversation">
-                <div class="conv-item send">
+                <div class="conv-item" v-for="(message, index) in contacts[activeChat].messages" :class="{get: contacts[activeChat].messages[index].status  === 'received'}">
                     <div class="text-container">
-                        <p>Messaggio Inviato</p>
-                        <span>10/01/2021 15:50:00</span>
+                        <p>{{message.text}}</p>
+                        <span>{{message.date}}</span>
                     </div>
                 </div>
                 
-                <div class="conv-item get">
+                <!-- <div class="conv-item get">
                     <div class="text-container">
                         <p>Messaggio Inviato</p>
                         <span>10/01/2021 15:50:00</span>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- Message -->
