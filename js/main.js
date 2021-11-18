@@ -55,6 +55,7 @@ const app = new Vue({
     created() {
         //traduzione data
         dayjs.locale('it')
+
     },
 
     data: {
@@ -145,6 +146,7 @@ const app = new Vue({
 
         activeChat: 0,
         messageInput: '',
+        searchInput: '',
 
         //Messaggi Random
         userMessage: [
@@ -208,6 +210,17 @@ const app = new Vue({
         //generiamo un numero random
         numRandom() {
             return Math.floor( Math.random() * this.userMessage.length)
+        },
+
+        //cerchiamo l'utente
+        search() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (!this.contacts[i].name.toLowerCase().includes(this.searchInput.toLowerCase())) {
+                    this.contacts[i].visible = false
+                } else {
+                    this.contacts[i].visible = true
+                }
+            }         
         }
     }
 }) 

@@ -64,14 +64,14 @@
             <div class="search-section">
                 <div class="search">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" @keyup="search">
                 </div>
             </div>
 
             <!-- Chat List -->
             <div class="chat-list">
                 <ul>
-                    <li class="user px-15" v-for="(contact, index) in contacts" @click="selectChat(index)" :class="{active: index === activeChat}">
+                    <li class="user px-15" v-for="(contact, index) in contacts" @click="selectChat(index)" :class="{active: index === activeChat}" v-show="contacts[index].visible">
                         <img :src=" './img/avatar' + contact.avatar + '.jpg'" alt="">
                         <div class="info px-5">
                         <h4>{{contact.name}}</h4>

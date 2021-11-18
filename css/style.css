@@ -294,3 +294,11 @@ i {
 .chat-list ul li.active {
     background-color: rgb(223, 223, 223)
 }
+
+.chat-list ul .d-none {
+    display: none
+}
+
+.chat-list ul .d-none {
+    display: none
+}
