@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolzapp</title>
+    <title>Boolzapp BONUS</title>
 
     <!-- Style -->
     <link rel="stylesheet" href="./css/style.css">
@@ -75,6 +75,7 @@
                         <img :src=" './img/avatar' + contact.avatar + '.jpg'" alt="">
                         <div class="info px-5">
                         <h4>{{contact.name}}</h4>
+                        <span ref="spanContact">Ultimo Accesso il 10/01/2020 alle 15:50:00</span>
                     </li>
                 </ul>
             </div>
@@ -89,7 +90,7 @@
                 <img :src=" './img/avatar' + contacts[activeChat].avatar + '.jpg'" alt="">
                 <div class="info px-5">
                         <h4>{{contacts[activeChat].name}}</h4>
-                        <span>Ultimo Accesso oggi alle 10:45</span>
+                        <span ref="spanChat">Ultimo Accesso il 10/01/2020 alle 15:50:00</span>
                 </div>
                 <div class="icon">
                     <i class="fas fa-search"></i>
@@ -102,17 +103,13 @@
             <div class="conversation">
                 <div class="conv-item" v-for="(message, index) in contacts[activeChat].messages" :class="{get: contacts[activeChat].messages[index].status  === 'received'}">
                     <div class="text-container">
-                        <p>{{message.text}}</p>
+                        <p>{{message.text}} <i class="fas fa-chevron-down"></i></p>
                         <span>{{message.date}}</span>
+                        
                     </div>
                 </div>
                 
-                <!-- <div class="conv-item get">
-                    <div class="text-container">
-                        <p>Messaggio Inviato</p>
-                        <span>10/01/2021 15:50:00</span>
-                    </div>
-                </div> -->
+               
             </div>
 
             <!-- Message -->

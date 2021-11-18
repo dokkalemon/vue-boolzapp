@@ -250,6 +250,15 @@ i {
     position: relative;
 }
 
+.text-container p {
+    display: flex;
+    justify-content: space-between
+}
+
+.text-container i {
+    font-size: 18px;
+}
+
 .text-container span {
     font-size: 10px;
     position: absolute; 
@@ -302,3 +311,5 @@ i {
 .chat-list ul .d-none {
     display: none
 }
+
+/* message menu */

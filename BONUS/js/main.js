@@ -202,8 +202,9 @@ const app = new Vue({
                 this.contacts[this.activeChat].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: this.userMessage[this.numRandom()].text,
-                    status: 'received',
+                    status: 'received', 
                 });
+                this.$refs.spanContact[this.activeChat].innerHTML = `Ultimo accesso il ${dayjs().format('DD/MM/YYYY')} alle ${dayjs().format('HH:mm:ss')}`;
             }, 1000)
         },
 
@@ -221,6 +222,9 @@ const app = new Vue({
                     this.contacts[i].visible = true
                 }
             }         
-        }
+        },
+
+        //menu a tendina nel messaggio
+        
     }
 }) 
