@@ -1,0 +1,304 @@
+/* GENERAL */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utilities */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.debug {
+    border: 1px solid red;
+}
+
+.px-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.px-5 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+i {
+    font-size: 22px;
+    color: #a3a3a4;
+    cursor: pointer;
+}
+
+.info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex-grow: 1;
+    cursor: pointer;
+}
+.info h4 {
+    font-weight: 500
+}
+.info span {
+    font-size: 14px;
+    color: #82888b;
+}
+
+/* App Background */
+.app-back {
+    height: 100vh;
+    width: 100%;
+}
+
+.green {
+    height: 140px;
+    width: 100%;
+    background-color: #32a093;
+}
+
+.grey {
+    height: calc(100% - 140px);
+    width: 100%;
+    background-color: #dfe0d8;
+}
+
+
+
+/* App */
+.app {
+    height: 95vh;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+}
+
+/* -----------GENERAL----------- */
+/* Header Users */
+.users {
+    height: 100%;
+    width: 35%;
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    background-color: #ededed;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header img {
+    height: 85%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+
+.icon {
+    display: flex; 
+    width: 20%;
+    justify-content: end;
+}
+
+.icon i {
+    margin-left: 20px;
+}
+
+/* -----------USER SECTION----------- */
+/* Notify Section */
+.notify {
+    height: 80px;
+    width: 100%;
+    background-color: #a2dffe;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.notify-icon {
+    height: 60px;
+    width: 60px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notify-icon {
+    color: #a2dffe;
+}
+
+.notify .info span {
+    text-decoration: underline;
+}
+
+/* Search */
+.search-section {
+    height: 50px;
+    width: 100%;
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.search {
+    height: 70%;
+    width: 95%;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.search i {
+    margin: 0 30px;
+    font-size: 19px;
+}
+
+.search input {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.search input::placeholder {
+    color: #ababab
+}
+
+
+
+/* Chat List */
+.chat-list {
+    height: calc( 100% - 50px - 80px - 70px);
+    width: 100%;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+.chat-list ul {
+    height: 100%;
+    width: 100%;
+}
+
+.chat-list ul li {
+    list-style: none;
+    height: 80px;
+    width: 100%;
+    border: 1px solid #f6f6f6;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.user img {
+    height: 85%;
+    border-radius: 100%;
+}
+
+
+
+
+
+
+/* ---------CHAT SECTION--------- */
+.chat {
+    height: 100%;
+    width: 65%;
+    border: 1px solid #dbdbdb;
+}
+
+/* Conversation Section */
+.conversation {
+    height: calc(100% - 70px - 70px);
+    width: 100%;
+    background-image: url('../img/mine.jpg');
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.conv-item {
+    width: 100%;
+    padding: 0px 100px 40px 100px;
+    display: flex;
+    justify-content: end;
+}
+
+.text-container {
+    background-color: #ddfabf;
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.text-container span {
+    font-size: 10px;
+    position: absolute; 
+    right: 5px;
+    bottom: 5px;
+    color: #a0a1a2;
+}
+
+.get {
+    justify-content: start;
+}
+
+.get .text-container {
+    background-color: #fff;
+}
+
+
+
+/* Message */
+.message {
+    height: 70px;
+    width: 100%;
+    background-color: #f4f0ed;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.message i {
+    padding: 0 30px;
+}
+
+.message input {
+    flex-grow: 1;
+    border: none;
+    height: 70%;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+.chat-list ul li.active {
+    background-color: rgb(223, 223, 223)
+}
+
+.chat-list ul .d-none {
+    display: none
+}
+
+.chat-list ul .d-none {
+    display: none
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google Font: Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Vue Js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <!-- App Background -->
+    <section class="app-back">
+        <div class="green"></div>
+        <div class="grey"></div>
+    </section>
+    
+
+    <!-- App -->
+    <main class="app" id="app">
+
+        <!-- Users Section-->
+        <section class="users">
+
+            <!-- Header -->
+            <div class="header user px-15">
+                <img src="./img/avatar_io.jpg" alt="">
+                <div class="info px-5">
+                        <h4>Nome Utente</h4>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- Notify Section -->
+            <div class="notify px-15">
+                <div class="notify-icon">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="info px-5">
+                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                    <span>Attiva notifiche Desktop</span>
+                </div>
+            </div>
+
+            <!-- Search Message -->
+            <div class="search-section">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" @keyup="search">
+                </div>
+            </div>
+
+            <!-- Chat List -->
+            <div class="chat-list">
+                <ul>
+                    <li class="user px-15" v-for="(contact, index) in contacts" @click="selectChat(index)" :class="{active: index === activeChat}" v-show="contacts[index].visible">
+                        <img :src=" './img/avatar' + contact.avatar + '.jpg'" alt="">
+                        <div class="info px-5">
+                        <h4>{{contact.name}}</h4>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <!-- Chat Section -->
+        <section class="chat">
+
+            <!-- Header -->
+            <div class="header user px-15">
+                <img :src=" './img/avatar' + contacts[activeChat].avatar + '.jpg'" alt="">
+                <div class="info px-5">
+                        <h4>{{contacts[activeChat].name}}</h4>
+                        <span>Ultimo Accesso oggi alle 10:45</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- Conversation Section -->
+            <div class="conversation">
+                <div class="conv-item" v-for="(message, index) in contacts[activeChat].messages" :class="{get: contacts[activeChat].messages[index].status  === 'received'}">
+                    <div class="text-container">
+                        <p>{{message.text}}</p>
+                        <span>{{message.date}}</span>
+                    </div>
+                </div>
+                
+                <!-- <div class="conv-item get">
+                    <div class="text-container">
+                        <p>Messaggio Inviato</p>
+                        <span>10/01/2021 15:50:00</span>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- Message -->
+            <div class="message">
+                <i class="far fa-smile"></i>
+                <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="addMessage" v-model.trim="messageInput" ref="input">
+                <i class="fas fa-microphone"></i>
+            </div>
+
+        </section>
+
+
+ 
+
+
+
+
+    </main>
+
+
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/locale/it.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
